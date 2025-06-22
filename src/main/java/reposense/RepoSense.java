@@ -85,6 +85,8 @@ public class RepoSense {
             List<Path> reportFoldersAndFiles = reportGenerator.generateReposReport(configs,
                     cliArguments, reportConfig, repoBlurbMap, authorBlurbMap, chartBlurbMap);
 
+            FileUtil.setPrettyPrintingMode(cliArguments.isPrettyPrintingUsed());
+
             FileUtil.handleZipFilesAndFolders(reportFoldersAndFiles, cliArguments.getOutputFilePath().toAbsolutePath(),
                     cliArguments.isOnlyTextRefreshed(), ".json");
 
