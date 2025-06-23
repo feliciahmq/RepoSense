@@ -41,6 +41,7 @@ public class CliArguments {
     private boolean isPortfolio;
     private boolean isFreshClonePerformed = ArgsParser.DEFAULT_SHOULD_FRESH_CLONE;
     private boolean isOnlyTextRefreshed;
+    private boolean isPrettyPrintingUsed;
 
     private List<String> locations;
     private boolean isViewModeOnly;
@@ -208,6 +209,10 @@ public class CliArguments {
 
     public boolean isOnlyTextRefreshed() {
         return isOnlyTextRefreshed;
+    }
+
+    public boolean isPrettyPrintingUsed() {
+        return isPrettyPrintingUsed;
     }
 
     @Override
@@ -549,6 +554,16 @@ public class CliArguments {
          */
         public Builder isOnlyTextRefreshed(boolean isOnlyTextRefreshed) {
             this.cliArguments.isOnlyTextRefreshed = isOnlyTextRefreshed;
+            return this;
+        }
+
+        /**
+         * Adds the {@code isPrettyPrintingUsed} to CLIArguments.
+         *
+         * @param isPrettyPrintingUsed Is Pretty Printing used.
+         */
+        public Builder isPrettyPrintingUsed(boolean isPrettyPrintingUsed) {
+            this.cliArguments.isPrettyPrintingUsed = isPrettyPrintingUsed;
             return this;
         }
 
