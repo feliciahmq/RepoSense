@@ -81,11 +81,12 @@ public class RepoSense {
                 GitConfig.setGlobalGitLfsConfig(GitConfig.SKIP_SMUDGE_CONFIG_SETTINGS);
             }
 
+            FileUtil.setPrettyPrintingMode(cliArguments.isPrettyPrintingUsed());
+
             ReportGenerator reportGenerator = new ReportGenerator();
             List<Path> reportFoldersAndFiles = reportGenerator.generateReposReport(configs,
                     cliArguments, reportConfig, repoBlurbMap, authorBlurbMap, chartBlurbMap);
 
-            FileUtil.setPrettyPrintingMode(cliArguments.isPrettyPrintingUsed());
 
             FileUtil.handleZipFilesAndFolders(reportFoldersAndFiles, cliArguments.getOutputFilePath().toAbsolutePath(),
                     cliArguments.isOnlyTextRefreshed(), ".json");
