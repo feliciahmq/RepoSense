@@ -274,6 +274,15 @@ public class InputBuilder {
     }
 
     /**
+     * Adds the flag to enable JSON files to be printed in a more readable way.
+     * This method should only be called once in one build.
+     */
+    public InputBuilder addJsonPrinting() {
+        input.append(ArgsParser.JSON_PRINT_MODE_FLAGS[0] + WHITESPACE);
+        return this;
+    }
+
+    /**
      * Adds {@code content} to the input.
      */
     public InputBuilder add(String content) {
